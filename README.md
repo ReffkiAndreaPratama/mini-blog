@@ -87,7 +87,7 @@ _(Tambahkan screenshot UI di sini untuk nilai plus)_
 ## 👨‍💻 Author
 
 Nama Kamu  
-GitHub: https://github.com/USERNAME
+https://github.com/ReffkiAndreaPratama
 
 ---
 
