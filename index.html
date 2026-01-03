@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <div>
+        <h1>Mini Blog</h1>
+        <p class="subtitle">Manage your articles</p>
+      </div>
+      <a href="create.html" class="btn primary">+ New</a>
+    </header>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search articles..."
+      />
+
+      <select id="sort">
+        <option value="new">Newest</option>
+        <option value="old">Oldest</option>
+        <option value="title">Title</option>
+      </select>
+
+      <button id="theme" class="icon-btn" title="Toggle dark mode">🌙</button>
+    </div>
+
+    <!-- LIST -->
+    <div id="article-list"></div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <button id="prev">Prev</button>
+      <span id="page-info"></span>
+      <button id="next">Next</button>
+    </div>
+
+  </div>
+
+  <!-- CONFIRM DELETE -->
+  <div id="confirm-box" class="confirm hidden">
+    <div>
+      <p>Yakin ingin menghapus artikel?</p>
+      <div class="actions">
+        <button id="confirm-yes">Hapus</button>
+        <button id="confirm-no" class="btn secondary">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <!-- SCRIPTS (WAJIB DI BAWAH) -->
+  <script src="js/data.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>

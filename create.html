@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tambah Artikel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Tambah Artikel</h1>
+      <a href="index.html" class="btn secondary">Kembali</a>
+    </header>
+
+    <form id="create-form">
+
+      <input
+        type="text"
+        id="title"
+        placeholder="Judul artikel"
+        required
+      />
+
+      <textarea
+        id="content"
+        placeholder="Isi artikel..."
+        maxlength="500"
+        required
+      ></textarea>
+
+      <small id="counter">0 / 500</small>
+
+      <div class="actions">
+        <button type="submit">Simpan</button>
+        <a href="index.html" class="btn secondary">Batal</a>
+      </div>
+      
+
+    </form>
+
+  </div>
+<div id="toast" class="toast"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/create.js"></script>
+
+</body>
+</html>

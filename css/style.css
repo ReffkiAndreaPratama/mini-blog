@@ -1,0 +1,349 @@
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --border: #e5e7eb;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.05);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+
+  --transition: 0.2s ease;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BACKGROUND LAYER (SUBTLE & PROFESSIONAL)
+===================================================== */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(
+      1200px circle at top left,
+      rgba(37, 99, 235, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      1000px circle at bottom right,
+      rgba(16, 185, 129, 0.06),
+      transparent 45%
+    ),
+    var(--bg);
+}
+
+/* subtle grid (very light) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================================================
+   LAYOUT / GLASS CONTAINER
+===================================================== */
+.container {
+  max-width: 920px;
+  margin: 48px auto;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =====================================================
+   HEADER (APP STYLE)
+===================================================== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border var(--transition), box-shadow var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+button,
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+button:hover,
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: #475569;
+}
+
+.btn.secondary:hover {
+  background: #334155;
+}
+
+.icon-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+}
+
+/* =====================================================
+   ARTICLE CARD (NOTION / LINEAR STYLE)
+===================================================== */
+.article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 14px;
+  transition: background var(--transition), border var(--transition);
+}
+
+.article:hover {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+.article h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.article small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.article p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.article mark {
+  background: #fde68a;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* =====================================================
+   ACTIONS (LOW EMPHASIS)
+===================================================== */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.actions button,
+.actions .btn {
+  background: transparent;
+  color: var(--primary);
+  padding: 6px 8px;
+}
+
+.actions button:hover,
+.actions .btn:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.pagination span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+.empty {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--muted);
+}
+
+.empty p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #020617;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+  background: #16a34a;
+}
+
+.toast.error {
+  background: #dc2626;
+}
+
+/* =====================================================
+   CONFIRM MODAL
+===================================================== */
+.confirm {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm.hidden {
+  display: none;
+}
+
+.confirm > div {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* =====================================================
+   DARK MODE (VARIABLE BASED)
+===================================================== */
+body.dark {
+  --bg: #0b0f19;
+  --surface: #0f172a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --border: #1e293b;
+}
+
+body.dark .container {
+  background: rgba(2, 6, 23, 0.75);
+}
